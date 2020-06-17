@@ -7,6 +7,9 @@ using Microsoft.Extensions.Logging;
 
 namespace LabAngular.Controllers
 {
+    /// <summary>
+    /// New ADJLKDAKLKLA
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
