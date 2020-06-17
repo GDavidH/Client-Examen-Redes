@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p *ngIf="!rankingList"><em> Loading....</em> </p>
+  <p>
+
+  </p>
+  <h2> Ranking </h2>
+  <table class='table' *ngIf="rankingList">
+
+    <thead class="thead-dark">
+      <tr>
+
+        <th>Rank</th>
+        <th>Company</th>
+        <th>Attack</th>
+
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let rank of rankingList">
+        <td>{{ rank.Rank  }}</td>
+        <td>{{ rank.Company  }}</td>
+        <td>
+          <a [routerLink]="['/comment/', comment.Id]"> Attack </a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

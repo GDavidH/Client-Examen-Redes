@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <h3>New Guerrilla</h3>
+  <hr />
+  <form [formGroup]="guerrillaForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    
+    <div class="form-group row">
+        <label class=" control-label col-md-12" for="GuerrillaName">Name</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="GuerrillaName">
+        </div>
+        <span class="text-danger" *ngIf="guerrillaForm.hasError('required', 'GuerrillaName') && formDir.submitted">
+          GuerrillaName is required.
+        </span>
+        </div>
+
+        <div class="form-group row">
+          <label class=" control-label col-md-12" for="Email">Email</label>
+          <div class="col-md-4">
+            <input class="form-control" type="text" formControlName="Email">
+          </div>
+          <span class="text-danger" *ngIf="guerrillaForm.hasError('required', 'Email') && formDir.submitted">
+            Email is required.
+          </span>
+        </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">Type</label>
+        <div class="col-md-4">
+          <select name="Type" id="Type">
+            <option value="volvo">USMC</option>
+            <option value="saab">China</option>
+            <option value="mercedes">MEC</option>
+          </select>
+        </div>
+      </div>     
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-outline-success">Save</button>
+        <button class="btn btn-outline-danger" (click)="cancel()">Cancel</button>
+      </div>
+      
+</form>
+</body>
+</html>

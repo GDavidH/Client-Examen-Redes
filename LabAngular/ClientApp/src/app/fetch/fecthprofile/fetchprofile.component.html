@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+</head>
+<body>
+  <p *ngIf="!clientList"><em> Loading....</em> </p>
+  <table class='table' *ngIf="profileList">
+
+    <thead class="thead-dark">
+      <tr>
+        <th>Oil</th>
+        <th>Money</th>
+        <th>People</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let client of profileList">
+        <td>{{ client.Oil  }}</td>
+        <td>{{ client.Money  }}</td>
+        <td>{{ client.People  }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <button type="button" class="btn btn-light" [routerLink]="['/register-Unit']">Add Units</button>
+  </p>
+
+</body>
+</html>
