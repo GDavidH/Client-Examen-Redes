@@ -1,30 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+const { GuerrillaService } = require("../../services/guerrilla/guerrillaservice.service");
 core_1.Component({
     templateUrl: './fetchranking.component.html'
 });
-var FetchCommentComponent = /** @class */ (function () {
-    function FetchCommentComponent(http, _router, _commentService) {
+var FetchRankingComponent = /** @class */ (function () {
+    function FetchRankingComponent(http, _router, _guerrillaService) {
         this.http = http;
         this._router = _router;
-        this._commentService = _commentService;
-        this.getComment();
+        this._guerrillaService = _guerrillaService;
+        this.getAllGuerrillas();
     }
-    FetchCommentComponent.prototype.getComment = function () {
+    FetchRankingComponent.prototype.getAllGuerrillas = function () {
         var _this = this;
-        this._commentService.getComment().subscribe(function (data) { return _this.commentList = data; });
+        this._guerrillaService.getAllGuerrillas().subscribe(function (data) { return _this.rankingList = data; });
     };
-    FetchCommentComponent.prototype.delete = function (id) {
-        var _this = this;
-        var answer = confirm("Do you want to delete Comment with id: " + id + "?");
-        if (answer) {
-            this._issueService.deleteComment(id).subscribe(function (data) {
-                _this.getComment();
-            }, function (error) { return console.error(error); });
-        }
-    };
-    return FetchCommentComponent;
+    return FetchRankingComponent;
 }());
-exports.FetchCommentComponent = FetchCommentComponent;
+exports.FetchRankingComponent = FetchRankingComponent;
 //# sourceMappingURL=fetchemployee.component.js.map

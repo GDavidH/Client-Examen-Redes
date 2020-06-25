@@ -10,71 +10,55 @@
   <hr />
   <form [formGroup]="unitForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
     
-    <div class="form-group row">
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Assault">Assault </label>
         <div class="col-md-4">
-         <input class="form-control" type="text" formControlName="Name" hidden>
-        </div>
-
-        <label class=" control-label col-md-12" for="Assault">Assault</label>
-        <div class="col-md-4">
-          <input class="form-control" type="number" formControlName="Assault" readonly>
+          <input class="form-control" type="text" formControlName="Assault" readonly> 
           <div class="input-group-prepend">
             <span class="input-group-text">+</span>
-            <input class="form-control" type="number" formControlName="AddAssault">         
-           </div>          
+            <input class="form-control" type="number" formControlName="AddAssault" value=0>         
+           </div>         
         </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Assault') && formDir.submitted">
-          Assault is required.
-        </span>
       </div>
 
       <div class="form-group row">
         <label class=" control-label col-md-12" for="Engineer">Engineer</label>
         <div class="col-md-4">
-          <input class="form-control" type="number" formControlName="Engineer" readonly>
+          <input class="form-control" type="text" formControlName="Engineer" readonly> 
           <div class="input-group-prepend">
             <span class="input-group-text">+</span>
-            <input class="form-control" type="number" formControlName="AddEngineer">
-          </div>  
+            <input class="form-control" type="number" formControlName="AddEngineer" value=0>
+          </div> 
         </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Engineer') && formDir.submitted">
-          Engineer is required.
-        </span>
       </div>
 
       <div class="form-group row">
         <label class=" control-label col-md-12" for="Tank">Tank</label>
         <div class="col-md-4">
-          <input class="form-control" type="number" formControlName="Tank" readonly>
+          <input class="form-control" type="text" formControlName="Tank" readonly> 
           <div class="input-group-prepend">
             <span class="input-group-text">+</span>
-            <input class="form-control" type="number" formControlName="AddTank">
-          </div>         
-        </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'AddTank') && formDir.submitted">
-          Tank is required.
-        </span>
+            <input class="form-control" type="number" formControlName="AddTank" value=0>
+          </div>       
+        </div> 
       </div>
 
       <div class="form-group row">
         <label class=" control-label col-md-12" for="Bunker">Bunker</label>
         <div class="col-md-4">
-          <input class="form-control" type="number" formControlName="Bunker" readonly> 
+          <input class="form-control" type="text" formControlName="Bunker" readonly> 
           <div class="input-group-prepend">
             <span class="input-group-text">+</span>
             <input class="form-control" type="number" formControlName="AddBunker">
           </div>
         </div>
-        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Bunker') && formDir.submitted">
-          Bunker Phone is required.
-        </span>
       </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-default">Save</button>
-        <button class="btn" (click)="cancel()">Cancel</button>
+        <button type="submit" class="btn btn-outline-success">Add</button>
+        <button class="btn btn-outline-danger" (click)="cancel()">Cancel</button>
       </div>
-
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 </form>
 </body>
 </html>

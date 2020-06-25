@@ -11,8 +11,8 @@ var GuerrillaService = /** @class */ (function () {
         this.myAppUrl = "";
         this.myAppUrl = baseUrl;
     }
-    GuerrillaService.prototype.getGuerrilla= function () {
-        return this._http.get('https://localhost:59267/api/Client/').pipe(operators_1.map(function (res) {
+    GuerrillaService.prototype.getGuerrillas= function () {
+        return this._http.get('https://localhost:44331/Guerrilla').pipe(operators_1.map(function (res) {
             console.log('res', res);
             return res;
         }));

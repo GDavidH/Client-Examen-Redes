@@ -23,7 +23,7 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>   
+            <a class="nav-link text-dark" [routerLink]="['/login-page']">Login</a>   
           </li>
 
           <li [routerLinkActive]="['link-active']">
@@ -31,12 +31,17 @@
           </li>
           
           <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-profile']">Profile</a>
+            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
+          </li>          
+          
+          <li [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/settings']">Settings</a>
           </li>
 
           <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/login-page']">Login</a>
+            <a class="nav-link text-dark" [routerLink]="['/login-page']">logout </a>
           </li>
+
         </ul>
       </div>
     </div>

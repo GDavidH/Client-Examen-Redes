@@ -7,27 +7,26 @@
 <body>
   <p *ngIf="!rankingList"><em> Loading....</em> </p>
   <p>
-
   </p>
   <h2> Ranking </h2>
-  <table class='table' *ngIf="rankingList">
+  <table class='table table-striped table-dark' *ngIf="rankingList">
 
-    <thead class="thead-dark">
+    <thead class="table table-hover table-dark">
       <tr>
 
         <th>Rank</th>
         <th>Company</th>
-        <th>Attack</th>
+        <th></th>
 
       </tr>
 
     </thead>
     <tbody>
-      <tr *ngFor="let rank of rankingList">
-        <td>{{ rank.Rank  }}</td>
-        <td>{{ rank.Company  }}</td>
+      <tr *ngFor="let guerrilla of rankingList">
+        <td>{{ guerrilla.rank  }}</td>
+        <td>{{ guerrilla.guerrillaName }}</td>
         <td>
-          <a [routerLink]="['/comment/', comment.Id]"> Attack </a>
+          <a id="Attack" [routerLink]="['/comment/']"> Attack </a>
         </td>
 
       </tr>

@@ -2,33 +2,38 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Profile</title>
+    <title></title>
 </head>
 <body>
-  <p *ngIf="!clientList"><em> Loading....</em> </p>
-  <table class='table' *ngIf="profileList">
+  <h1>{{title}}</h1>
+  <h3>Profile</h3>
+  <form [formGroup]="profileForm" #formDir="ngForm" novalidate>
+    
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class=" control-label col-md-12" for="Oil"><b>Oil</b></label>
+        <input class="form-control" type="text" formControlName="Oil" readonly>         
+      </div>
+    </div>
 
-    <thead class="thead-dark">
-      <tr>
-        <th>Oil</th>
-        <th>Money</th>
-        <th>People</th>
-      </tr>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class=" control-label col-md-12" for="Money"><b>Money</b></label>
+        <input class="form-control" type="text" formControlName="Money" readonly> 
+      </div>
+    </div>
 
-    </thead>
-    <tbody>
-      <tr *ngFor="let client of profileList">
-        <td>{{ client.Oil  }}</td>
-        <td>{{ client.Money  }}</td>
-        <td>{{ client.People  }}</td>
+    <div class="form-group row">
+      <div class="col-md-4">
+        <label class=" control-label col-md-12" for="People"><b>People</b></label>
+        <input class="form-control" type="text" formControlName="People" readonly> 
+      </div>
+    </div>
 
-      </tr>
-    </tbody>
-  </table>
+    <div class="form-group">
+      <button type="button" class="btn btn-dark" [routerLink]="['/add-Units']"><i>Add Units</i></button>
+    </div>
 
-  <p>
-    <button type="button" class="btn btn-light" [routerLink]="['/register-Unit']">Add Units</button>
-  </p>
-
+</form>
 </body>
 </html>

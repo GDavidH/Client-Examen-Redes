@@ -8,7 +8,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import { SettingsComponent } from './settings/settings.component';
 
 import { GuerrillaService } from './services/guerrilla/guerrillaservice.service';
 
@@ -31,7 +31,7 @@ import { FetchRankingComponent } from './fetch/fetchranking/fetchranking.compone
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
+    SettingsComponent,
     LoginComponent,
     RegisterGuerrilla,
     FetchProfileComponent,
@@ -46,17 +46,17 @@ import { FetchRankingComponent } from './fetch/fetchranking/fetchranking.compone
     ReactiveFormsModule, 
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'settings', component: SettingsComponent },
 
       { path: 'login-page', component: LoginComponent },
       { path: 'register-gerrilla', component: RegisterGuerrilla },
-      { path: 'gerrilla/:name', component: RegisterGuerrilla },
+      //{ path: 'gerrilla/:name', component: RegisterGuerrilla },
 
       { path: 'fetch-Ranking', component: FetchRankingComponent },
 
-      { path: 'fetch-profile', component: FetchProfileComponent },
-      { path: 'register-Unit', component: RegisterUnit},
-      { path: 'unit/:name', component: RegisterGuerrilla },
+      { path: 'profile', component: FetchProfileComponent },
+      { path: 'add-Units', component: RegisterUnit},
+      { path: 'unit/:name', component: RegisterUnit },
 
 
 

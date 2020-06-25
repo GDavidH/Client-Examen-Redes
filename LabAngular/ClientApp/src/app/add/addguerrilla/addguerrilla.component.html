@@ -5,18 +5,17 @@
   <title></title>
 </head>
 <body>
-  <h1>{{title}}</h1>
   <h3>New Guerrilla</h3>
   <hr />
   <form [formGroup]="guerrillaForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
     
     <div class="form-group row">
-        <label class=" control-label col-md-12" for="GuerrillaName">Name</label>
+        <label class=" control-label col-md-12" for="Name">Name</label>
         <div class="col-md-4">
-          <input class="form-control" type="text" formControlName="GuerrillaName">
+          <input class="form-control" type="text" formControlName="Name">
         </div>
-        <span class="text-danger" *ngIf="guerrillaForm.hasError('required', 'GuerrillaName') && formDir.submitted">
-          GuerrillaName is required.
+        <span class="text-danger" *ngIf="guerrillaForm.hasError('required', 'Name') && formDir.submitted">
+          Name is required.
         </span>
         </div>
 
@@ -31,12 +30,12 @@
         </div>
 
       <div class="form-group row">
-        <label class=" control-label col-md-12" for="Age">Type</label>
+        <label class=" control-label col-md-12" for="Faction">Faction</label>
         <div class="col-md-4">
-          <select name="Type" id="Type">
-            <option value="volvo">USMC</option>
-            <option value="saab">China</option>
-            <option value="mercedes">MEC</option>
+          <select class="form-control" formControlName="Faction">
+            <option value="USMC">USMC</option>
+            <option value="China">China</option>
+            <option value="MEC">MEC</option>
           </select>
         </div>
       </div>     
@@ -45,7 +44,7 @@
         <button type="submit" class="btn btn-outline-success">Save</button>
         <button class="btn btn-outline-danger" (click)="cancel()">Cancel</button>
       </div>
-      
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
 </form>
 </body>
 </html>

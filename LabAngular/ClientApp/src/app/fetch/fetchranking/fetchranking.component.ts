@@ -17,15 +17,15 @@ export class FetchRankingComponent {
     }
 
     getGuerrilla() {
-        this._guerrillaService.getGuerrillas().subscribe(
-
-            data => this.rankingList=data
+        this._guerrillaService.getAllGuerrilla().subscribe(       
+            data => this.rankingList=data        
         )
     }
 
 }  
 interface RankingData {
-    Rank: number,
-    Company: string
+    guerrillaName: string,
+    faction: string,
+    rank: number
 
 }  
