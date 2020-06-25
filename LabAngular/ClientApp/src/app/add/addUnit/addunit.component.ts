@@ -39,7 +39,7 @@ export class RegisterUnit implements OnInit{
         this._guerrillaService.getGuerrillaByName(localStorage.getItem('name')+"")
         .subscribe((data) => {
             this.unitForm.controls['Assault'].setValue(data.army.assault);
-            this.unitForm.controls['Engineer'].setValue(data.army.enginner);
+            this.unitForm.controls['Engineer'].setValue(data.army.engineer);
             this.unitForm.controls['Tank'].setValue(data.army.tank);
             this.unitForm.controls['Bunker'].setValue(data.buildings.bunker);
 
@@ -48,7 +48,7 @@ export class RegisterUnit implements OnInit{
 
     save() {
         this.units = '{"army": {"assault": '+this.unitForm.value.AddAssault+
-        ', "enginner": '+this.unitForm.value.AddEngineer+', "tank": '+this.unitForm.value.AddTank+
+        ', "engineer": '+this.unitForm.value.AddEngineer+', "tank": '+this.unitForm.value.AddTank+
         '}, "buildings": {"bunker": '+this.unitForm.value.AddBunker+'}}';      
         //console.log(this.units);
        // console.log(JSON.parse(this.units));

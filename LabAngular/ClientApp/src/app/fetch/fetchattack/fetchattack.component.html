@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <form [formGroup]="attackForm" (ngSubmit)="attack()" #formDir="ngForm" novalidate>
+    <!--flex-->
+
+    <div class="d-flex bd-highlight">
+      <!--flexIzquierda-->
+
+      <div class="p-2 flex-fill bd-highlight">
+        <h2><b><i>{{Name}}</i></b></h2>
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="diTeam2">DI-Team2 </label> 
+              <input class="input-group-text" type="text" formControlName="diTeam2" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+        <!-- -->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class=" input-group-text" for="lootCap">Loot-Cap </label> 
+              <input class="input-group-text" type="text" formControlName="lootCap" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+        <!--LOSSES-->
+        <div class="form-group row">     
+          <label class=" control-label col-md-12" for="losses"><b>Losses {{OpponentName}}</b></label> 
+        </div>
+    
+        <!-- Assault-->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="assault">Assault</label> 
+              <input class="input-group-text" type="text" formControlName="assault" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+            <!--Engineer-->
+            <div class="form-group row">     
+              <div class="col-md-4">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="engineer">Engineer</label> 
+                  <input class="input-group-text" type="text" formControlName="engineer" readonly>       
+                 </div>         
+              </div>
+            </div>
+    
+                <!--Tank -->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="tank">Tank</label> 
+              <input class="input-group-text" type="text" formControlName="tank" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+            <!--bunker-->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class=" input-group-text" for="bunker">bunker</label> 
+              <input class="input-group-text" type="text" formControlName="bunker" readonly>       
+              </div>         
+          </div>
+        </div>
+    
+            <!--LOOT-->
+        <!-- -->
+        <div class="form-group row">     
+        <label class=" control-label col-md-12" for="losses"><b>Loot</b></label> 
+        </div>
+    
+          <div class="form-group row">     
+            <div class="col-md-4">
+              <div class="input-group-prepend">
+                <label class=" input-group-text" for="money">Money</label> 
+                <input class="input-group-text" type="text" formControlName="money" readonly>       
+                </div>         
+            </div>
+          </div>       
+          
+          <div class="form-group row">     
+            <div class="col-md-4">
+              <div class="input-group-prepend">
+                <label class=" input-group-text" for="oil">Oil</label> 
+                <input class="input-group-text" type="text" formControlName="oil" readonly>       
+                </div>         
+            </div>
+          </div> 
+
+
+      </div>
+
+
+      <!--flexDerecha-->
+      <div class="p-2 flex-fill bd-highlight">
+        <h2><b><i>{{OpponentName}}</i></b></h2>
+        <!--AiTeam1-->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="aiTeam1">AI-Team1 </label> 
+              <input class="input-group-text" type="text" formControlName="aiTeam1" readonly>       
+             </div>         
+          </div>
+        </div>
+
+        <!--LOSSES-->
+        <div class="form-group row">     
+          <label class=" control-label col-md-12" for="losses2"><b>Losses {{Name}}</b></label> 
+        </div>
+    
+        <!-- Assault-->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="assault2">Assault</label> 
+              <input class="input-group-text" type="text" formControlName="assault2" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+            <!--Engineer-->
+            <div class="form-group row">     
+              <div class="col-md-4">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="engineer2">Engineer</label> 
+                  <input class="input-group-text" type="text" formControlName="engineer2" readonly>       
+                 </div>         
+              </div>
+            </div>
+    
+                <!--Tank -->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="tank2">Tank</label> 
+              <input class="input-group-text" type="text" formControlName="tank2" readonly>       
+             </div>         
+          </div>
+        </div>
+    
+            <!--bunker-->
+        <div class="form-group row">     
+          <div class="col-md-4">
+            <div class="input-group-prepend">
+              <label class=" input-group-text" for="bunker2">bunker</label> 
+              <input class="input-group-text" type="text" formControlName="bunker2" readonly>       
+              </div>         
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger">ATTACK</button>
+          <button type="button" class="btn btn-dark" [routerLink]="['/fetch-Ranking']"><i>Back To Ranking</i></button>
+        </div>
+
+      </div>
+    </div>
+
+</form>
+</body>
+</html>

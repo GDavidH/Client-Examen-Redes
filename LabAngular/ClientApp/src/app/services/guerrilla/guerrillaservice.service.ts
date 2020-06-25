@@ -54,6 +54,13 @@ export class GuerrillaService {
         }));
     }
 
+    attackGuerrilla(name:string, opponentName:string){
+        return this._http.post('https://localhost:44331/Guerrilla/attack/'+ opponentName +
+        '/?guerrillaSrc='+ name, name).pipe(map((res: any) => {
+            return res;
+            
+        }));
+    }
 
     errorHandler(error: Response) {
         console.log(error);

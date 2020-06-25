@@ -27,7 +27,6 @@ export class FetchProfileComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        console.log(this.profileForm.value.AddBunker);
         this._guerrillaService.getGuerrillaByName(localStorage.getItem('name')+"")
         .subscribe((data) => {
             this.profileForm.controls['Oil'].setValue(data.resources.oil);

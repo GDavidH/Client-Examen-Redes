@@ -23,6 +23,8 @@ import { RegisterUnit } from './add/addunit/addunit.component';
 
 import { FetchRankingComponent } from './fetch/fetchranking/fetchranking.component';
 
+import { FetchAttackComponent } from './fetch/fetchattack/fetchattack.component';
+
 
 
 
@@ -36,7 +38,8 @@ import { FetchRankingComponent } from './fetch/fetchranking/fetchranking.compone
     RegisterGuerrilla,
     FetchProfileComponent,
     RegisterUnit, 
-    FetchRankingComponent
+    FetchRankingComponent,
+    FetchAttackComponent
 
   ],
   imports: [
@@ -58,7 +61,7 @@ import { FetchRankingComponent } from './fetch/fetchranking/fetchranking.compone
       { path: 'add-Units', component: RegisterUnit},
       { path: 'unit/:name', component: RegisterUnit },
 
-
+      { path: 'attack/:opponentName', component:  FetchAttackComponent},
 
     ])
     ],
