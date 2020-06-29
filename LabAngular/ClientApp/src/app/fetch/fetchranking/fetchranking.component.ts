@@ -20,8 +20,8 @@ export class FetchRankingComponent {
         this._guerrillaService.getAllGuerrilla().subscribe(       
             data => this.rankingList=data        
         )
+        
     }
-
 }  
 interface RankingData {
     guerrillaName: string,

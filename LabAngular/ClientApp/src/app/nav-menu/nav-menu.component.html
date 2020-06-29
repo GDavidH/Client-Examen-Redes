@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">ClientAPP</a>
+      <a class="navbar-brand" [routerLink]="['/login-page']"><span class="badge badge-light">Client</span><span class="badge badge-info">APP</span></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -23,23 +23,23 @@
           <li class="nav-item"
               [routerLinkActive]="['link-active']"
               [routerLinkActiveOptions]="{ exact: true }">
-            <a class="nav-link text-dark" [routerLink]="['/login-page']">Login</a>   
+            <a class="nav-link text-dark" [routerLink]="['/login-page']"><span class="badge badge-pill badge-dark">Login</span></a>   
+          </li>
+          
+          <li id="profile" [routerLinkActive]="['link-active']" >
+            <a class="nav-link text-dark" [routerLink]="['/profile']"><span class="badge badge-pill badge-dark">Profile</span></a>
+          </li>    
+          
+          <li [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-Ranking']"><span class="badge badge-pill badge-dark">Ranking</span></a>
+          </li>      
+          
+          <li [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/settings']"><span class="badge badge-pill badge-dark">Settings</span></a>
           </li>
 
           <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-Ranking']">Ranking</a>
-          </li>
-          
-          <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
-          </li>          
-          
-          <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/settings']">Settings</a>
-          </li>
-
-          <li [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/login-page']">Logout </a>
+            <a class="nav-link text-dark" [routerLink]="" (click)="logout()"><span class="badge badge-pill light">Logout</span> </a>
           </li>
 
         </ul>
@@ -47,3 +47,4 @@
     </div>
   </nav>
 </header>
+<!--style="display:nome;"-->

@@ -34,7 +34,7 @@
     
         <!--LOSSES-->
         <div class="form-group row">     
-          <label class=" control-label col-md-12" for="losses"><b>Losses {{OpponentName}}</b></label> 
+          <label class=" control-label col-md-12" for="losses"><b>Losses</b></label> 
         </div>
     
         <!-- Assault-->
@@ -120,7 +120,7 @@
 
         <!--LOSSES-->
         <div class="form-group row">     
-          <label class=" control-label col-md-12" for="losses2"><b>Losses {{Name}}</b></label> 
+          <label class=" control-label col-md-12" for="losses2"><b>Losses</b></label> 
         </div>
     
         <!-- Assault-->
@@ -165,9 +165,18 @@
         <br>
         <br>
         <br>
-        <div class="form-group">
-          <button type="submit" class="btn btn-danger">ATTACK</button>
-          <button type="button" class="btn btn-dark" [routerLink]="['/fetch-Ranking']"><i>Back To Ranking</i></button>
+        <div class="form-group row"> 
+          <div class="form-group">
+            <button type="submit" class="btn btn-danger">ATTACK</button>
+            <button type="button" class="btn btn-dark" [routerLink]="['/fetch-Ranking']"><i>Back To Ranking</i></button>
+          </div>
+      </div>
+        <div class="form-group row"> 
+          <div class="alert">
+            <div *ngIf="messageWinner" class="alert alert-success">{{messageWinner}}</div>
+            <div *ngIf="messageLoser" class="alert alert-dark">{{messageLoser}}</div>
+            <div *ngIf="messageTied" class="alert alert-warning">{{messageTied}}</div>
+          </div>
         </div>
 
       </div>

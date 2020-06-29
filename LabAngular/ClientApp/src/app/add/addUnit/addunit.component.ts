@@ -68,6 +68,11 @@ export class RegisterUnit implements OnInit{
     cancel() {
         this._router.navigate(['/profile']);
     }
+
+    close(){
+        this.error = '';  
+    }
+    
     get Assault() { return this.unitForm.get('AddAssault'); }
     get Engineer() { return this.unitForm.get('AddEngineer'); }
     get Tank() { return this.unitForm.get('AddTank'); }

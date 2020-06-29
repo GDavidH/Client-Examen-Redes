@@ -60,4 +60,8 @@ export class LoginComponent implements OnInit {
         }
           
     }
+
+    close(){
+        this.error = '';  
+    }
 }

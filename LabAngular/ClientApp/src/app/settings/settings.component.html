@@ -1,10 +1,20 @@
-<h1>Connection IP</h1>
-<form [formGroup]="settingsForm">
-    <div class="form-group row">
-        <label for="ip"><b>IP</b></label>
-        <input type="text" formControlName="IP" class="form-control" />
-    </div>
+
+<h2>Connection IP</h2>
+<form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-        <button [disabled]="loading" class="btn btn-outline-primary">Connect</button>
+        <div class="col-md-4">
+            <label for="username">IP</label>
+            <input type="text" formControlName="ip" placeholder="192.168.56.1:1234" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ip.errors }" />
+            <div *ngIf="submitted && f.ip.errors" class="invalid-feedback">
+                <div *ngIf="f.ip.errors.required">Ip is required</div>
+            </div>
+            <br>
+            <br>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">Connect</button>
+            </div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        </div>
+
     </div>
 </form>
