@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
                 Email: ['', Validators.required]
             })  
             this.name=''; 
-            localStorage.setItem('name', '');      
+            //localStorage.setItem('name', '');      
         }
 
     ngOnInit() {
@@ -39,12 +39,14 @@ export class LoginComponent implements OnInit {
     get f() { return this.loginForm.controls; }
 
     onSubmit(form: FormGroup) {
-               
+        this.submitted=true;     
         // stop here if form is invalid
         if (this.loginForm.invalid) {
+            
             return;
         }
         else{
+            this.submitted=false;
             //buscar por email
             this._guerrillaService.getGuerrillas(this.loginForm.value.Email)
             .subscribe((data) => {

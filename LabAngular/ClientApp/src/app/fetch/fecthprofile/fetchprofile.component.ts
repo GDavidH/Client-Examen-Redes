@@ -11,7 +11,6 @@ import { stringify } from 'querystring';
     templateUrl: './fetchprofile.component.html'
 })
 export class FetchProfileComponent implements OnInit{
-    
     profileForm: FormGroup;
     name:string
     errorMessage: any;
@@ -27,13 +26,26 @@ export class FetchProfileComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this._guerrillaService.getGuerrillaByName(localStorage.getItem('name')+"")
-        .subscribe((data) => {
-            this.profileForm.controls['Oil'].setValue(data.resources.oil);
-            this.profileForm.controls['Money'].setValue(data.resources.money);
-            this.profileForm.controls['People'].setValue(data.resources.people);
+        this.fresh();
+    }
 
-        }, error => this.errorMessage = error)
+    private delay(ms: number){
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    private async fresh()
+    {   
+        while(true){
+            this._guerrillaService.getGuerrillaByName(localStorage.getItem('name')+"")
+            .subscribe((data) => {
+                this.profileForm.controls['Oil'].setValue(data.resources.oil);
+                this.profileForm.controls['Money'].setValue(data.resources.money);
+                this.profileForm.controls['People'].setValue(data.resources.people);
+                // Sleep thread for 15 seconds
+                
+            }, error => this.errorMessage = error)
+            await this.delay(15000);
+        }
     }
     get Oil() { return this.profileForm.get('Oil'); }
     get Money() { return this.profileForm.get('Money'); }
